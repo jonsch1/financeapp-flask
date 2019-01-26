@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+<div class="table-responsive">
+  <table class="table">
+  <th>Current Cash balance</th>
+  <th>Net Worth</th>
+  <tbody>
+  <td>{{"$%.2f"|format(balance|float)}}</td>
+  <td>{{"$%.2f"|format(networth|float)}}</td>
+  </tbody>
+  </table>
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th>Total Value</th>
+        <th>Number of Shares</th>
+        <th>Stock</th>
+
+      </tr>
+
+    </thead>
+    <tbody>
+      {%for i in portfolio %}
+      <tr>
+
+        <td>
+
+
+           {{"$%.2f"|format(i['totalvalue']|float)}}
+
+
+        </td>
+
+        <td>
+
+
+            {{i['shares']}}
+
+
+        </td>
+
+
+        <td>
+
+
+            {{i['symbol']}}
+
+
+        </td>
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

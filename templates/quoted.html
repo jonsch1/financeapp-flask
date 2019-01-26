@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th>{{stockinformation['name']}}</th>
+        <th>{{stockinformation['price']}} USD</th>
+        <th>{{stockinformation['symbol']}}</th>
+
+      </tr>
+    </thead>
+  </table>
+</div>
+
+{% endblock %}

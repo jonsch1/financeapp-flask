@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th>Time of Operation</th>
+        <th>Operation</th>
+        <th>Stock</th>
+        <th>Shares</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for i in history %}
+      <tr>
+        <td>
+
+            {{i['time']}}
+
+        </td>
+        <td>
+
+            {{i['operation']}}
+
+        </td>
+        <td>
+
+            {{i['symbol']}}
+
+        </td>
+        <td>
+
+            {{i['shares']}}
+
+        </td>
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
